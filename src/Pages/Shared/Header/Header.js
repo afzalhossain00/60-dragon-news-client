@@ -29,7 +29,7 @@ const Header = () => {
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">
+                        <>
                             {
                                 user?.uid ?
                                     <>
@@ -42,13 +42,13 @@ const Header = () => {
                                         <Link to='/register'>Register</Link>
                                     </>
                             }
-                        </Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
+                        </>
+                        <Link to="/profile">
                             {user?.photoURL ?
                                 <Image title={user?.displayName} style={{ height: '30px' }} roundedCircle src={user?.photoURL}></Image>
                                 : <FaUser></FaUser>
                             }
-                        </Nav.Link>
+                        </Link>
                     </Nav>
                     <div className='d-lg-none'>
                         <LeftSideNav></LeftSideNav>
